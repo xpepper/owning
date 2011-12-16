@@ -1,6 +1,2 @@
-<% if @message.errors.any? %>
-  alert("<%=j @message.errors.full_messages.to_sentence %>");
-<% else %>
-  $("#messages").append("<%=j render(@message) %>");
-<% end %>
+$("#messages").append("<%=j render(@message) %>");
 $("form#new_message")[0].reset();

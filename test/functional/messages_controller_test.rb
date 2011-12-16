@@ -11,6 +11,7 @@ class MessagesControllerTest < ActionController::TestCase
     assert_difference "Message.count", +1 do
       post :create, :room_id => rooms(:main), :message => { :body => "holla!" }, :format => "js"
       assert_response :success, @response.body
+      assert_no_match /alert/, @response.body
     end
   end
   
